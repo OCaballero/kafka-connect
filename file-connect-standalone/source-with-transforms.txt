@@ -1,0 +1,11 @@
+name=local-file-source
+connector.class=FileStreamSource
+tasks.max=1
+file=file-source.txt
+topic=connect-test2
+transforms=oliver,oliver2
+transforms.oliver.type=org.apache.kafka.connect.transforms.HoistField$Value
+transforms.oliver.field=line
+transforms.oliver2.type=org.apache.kafka.connect.transforms.InsertField$Value
+transforms.oliver2.static.field=data_source
+transforms.oliver2.static.value=el_data_source_molon
