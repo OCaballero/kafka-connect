@@ -1,0 +1,15 @@
+GET  http://quickstart.cloudera:8000/connectors
+
+
+POST  http://quickstart.cloudera:8000/connectors
+{"name":"connector-file","config":{
+    "connector.class": "FileStreamSinkConnector",
+    "tasks.max": "10",
+    "topic": "test-topic","file":"oliver.txt"
+}}
+
+
+
+GET  http://quickstart.cloudera:8000/connectors/connector-file/config
+
+GET  http://quickstart.cloudera:8000/connectors/connector-file/status
